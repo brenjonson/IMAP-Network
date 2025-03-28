@@ -1,12 +1,11 @@
-﻿# ลบบรรทัดนี้
-import pymysql
-pymysql.install_as_MySQLdb()
-
-# เหลือแค่
-from sqlalchemy import create_engine
+﻿from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from .config import settings
+
+# ลบส่วนที่เกี่ยวข้องกับ pymysql
+# import pymysql
+# pymysql.install_as_MySQLdb()
 
 # สร้าง engine สำหรับเชื่อมต่อฐานข้อมูล
 engine = create_engine(settings.DATABASE_URL)
