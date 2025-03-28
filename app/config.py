@@ -4,7 +4,7 @@ from cryptography.fernet import Fernet
 
 class Settings(BaseSettings):
     # เพิ่ม encryption key - ใช้ค่าคงที่เป็น default ที่ถูกต้อง
-    ENCRYPTION_KEY: str = os.getenv("ENCRYPTION_KEY", "dL4iLJ0SSjGb11C_RehyfSt0riNQdmWEWaZqbPQYM8g=")
+    ENCRYPTION_KEY: str = os.getenv("ENCRYPTION_KEY", "Xx8EAo8PwvHGX24cSqVL574AHoEaB_wkKVeC-5SHRcg=")
     
     # Database - เปลี่ยนจาก MySQL เป็น PostgreSQL
     DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://receipt_manager_db_user:oQngMMcIfHjxHQhmthD93k1qExIp7ivl@dpg-cvj397ali9vc73egb0v0-a/receipt_manager_db")
