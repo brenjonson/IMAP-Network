@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     ENCRYPTION_KEY: str = os.getenv("ENCRYPTION_KEY", Fernet.generate_key().decode())
     
     # Database
-    DATABASE_URL: str = "mysql+pymysql://root@localhost:3308/receipt_manager"
+    DATABASE_URL: str = "postgresql://receipt_manager_db_user:oQngMMcIfHjxHQhmthD93k1qExIp7ivl@dpg-cvj397ali9vc73egb0v0-a/receipt_manager_db"
     
     # JWT Authentication
     SECRET_KEY: str = "YOUR_SECRET_KEY_HERE"
