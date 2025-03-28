@@ -3,14 +3,14 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from cryptography.fernet import Fernet
 
 class Settings(BaseSettings):
-    # เพิ่ม encryption key
-    ENCRYPTION_KEY: str = os.getenv("ENCRYPTION_KEY", Fernet.generate_key().decode())
+    # กำหนดค่า ENCRYPTION_KEY แบบคงที่
+    ENCRYPTION_KEY: str = os.getenv("ENCRYPTION_KEY", "P-jFV9qxO1tqi3LRWGOptcorN2A3iqN7DTZIpgL4vBE=")
     
     # Database
-    DATABASE_URL: str = "postgresql://receipt_manager_db_user:oQngMMcIfHjxHQhmthD93k1qExIp7ivl@dpg-cvj397ali9vc73egb0v0-a/receipt_manager_db"
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://receipt_manager_db_user:oQngMMcIfHjxHQhmthD93k1qExIp7ivl@dpg-cvj397ali9vc73egb0v0-a/receipt_manager_db")
     
     # JWT Authentication
-    SECRET_KEY: str = "YOUR_SECRET_KEY_HERE"
+    SECRET_KEY: str = os.getenv("SECRET_KEY", "YOUR_SECRET_KEY_HERE")
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24
     CORS_ORIGINS: list = ["http://localhost:3000"]
